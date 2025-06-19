@@ -58,6 +58,16 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+  			<groupId>io.awspring.cloud</groupId>
+  			<artifactId>spring-cloud-starter-aws-parameter-store-config</artifactId>
+  			<version>2.4.4</version>
+		</dependency>
+		<dependency>
+    		<groupId>com.rometools</groupId>
+    		<artifactId>rome</artifactId>
+    		<version>1.18.0</version>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
