@@ -2,10 +2,18 @@ package me.schf.botpost.domain;
 
 import java.time.ZonedDateTime;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+
 public record RssEntry(
-	    String title,
-	    String link,
-	    String description,
-	    ZonedDateTime pubDate,
-	    String author
-	) {}
+		
+		@JacksonXmlProperty(localName = "title") String title,
+
+		@JacksonXmlProperty(localName = "link") String link,
+
+		@JacksonXmlProperty(localName = "description") String description,
+
+		@JacksonXmlProperty(localName = "pubDate") @JsonDeserialize(using = ZonedDateTimeDeserializer.class) ZonedDateTime pubDate,
+
+		@JacksonXmlProperty(localName = "author") String author) {
+}
